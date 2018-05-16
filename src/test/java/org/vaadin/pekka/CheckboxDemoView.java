@@ -75,46 +75,46 @@ public class CheckboxDemoView extends DemoView {
         Div message = new Div();
 
         // begin-source-example
-        // source-example-heading: Basic radio button group
+        // source-example-heading: Basic Checkbox group
         CheckboxGroup<String> group = new CheckboxGroup<>();
         group.setItems("foo", "bar", "baz");
         group.addValueChangeListener(event -> message.setText(String.format(
-                "Radio button group value changed from [%s] to [%s]",
+                "Checkbox group value changed from [%s] to [%s]",
                 event.getOldValue(), event.getValue())));
         // end-source-example
 
-        group.setId("button-group-with-value-change-listener");
-        message.setId("button-group-value");
+        group.setId("checkbox-group-with-value-change-listener");
+        message.setId("checkbox-group-value");
 
-        addCard("Basic radio button group", group, message);
+        addCard("Basic Checkbox group", group, message);
     }
 
     private void addItemRenderer() {
         Div message = new Div();
 
         // begin-source-example
-        // source-example-heading: Radio button group with renderer
+        // source-example-heading: checkbox group with renderer
         CheckboxGroup<Person> group = new CheckboxGroup<>();
         group.setItems(new Person(1, "Joe"), new Person(2, "John"),
                 new Person(3, "Bill"));
         group.setRenderer(new ComponentRenderer<>(person -> new Anchor(
                 "http://example.com/" + person.getId(), person.getName())));
         group.addValueChangeListener(event -> message.setText(String.format(
-                "Radio button group value changed from [%s] to [%s]",
+                "Checkbox group value changed from [%s] to [%s]",
                 getNames(event.getOldValue()), getNames(event.getValue()))));
         // end-source-example
 
-        group.setId("button-group-renderer");
-        message.setId("button-group-renderer-value");
+        group.setId("checkbox-group-renderer");
+        message.setId("checkbox-group-renderer-value");
 
-        addCard("Radio button group with renderer", group, message);
+        addCard("Checkbox group with renderer", group, message);
     }
 
     private void addItemLabelGenerator() {
         Div message = new Div();
 
         // begin-source-example
-        // source-example-heading: Radio button group with label generator
+        // source-example-heading: Checkbox group with label generator
         CheckboxGroup<Person> group = new CheckboxGroup<>();
         group.setItems(new Person("Joe"), new Person("John"),
                 new Person("Bill"));
@@ -124,15 +124,15 @@ public class CheckboxDemoView extends DemoView {
                 getNames(event.getOldValue()), getNames(event.getValue()))));
         // end-source-example
 
-        group.setId("button-group-with-item-generator");
-        message.setId("button-group-gen-value");
+        group.setId("checkbox-group-with-item-generator");
+        message.setId("checkbox-group-gen-value");
 
-        addCard("Radio button group with label generator", group, message);
+        addCard("Checkbox group with label generator", group, message);
     }
 
     private void addItemIconGenerator() {
         // begin-source-example
-        // source-example-heading: Radio button group with icon generator
+        // source-example-heading: Checkbox group with icon generator
         CheckboxGroup<Person> group = new CheckboxGroup<>();
         group.setItems(new Person(1, "Joe"), new Person(2, "John"),
                 new Person(3, "Bill"));
@@ -147,28 +147,28 @@ public class CheckboxDemoView extends DemoView {
         }, Person::getName));
         // end-source-example
 
-        group.setId("button-group-icon-generator");
+        group.setId("checkbox-group-icon-generator");
 
-        addCard("Radio button group with icon generator", group);
+        addCard("Checkbox group with icon generator", group);
     }
 
     private void addDisabled() {
 
         // begin-source-example
-        // source-example-heading: Disabled radio button group
+        // source-example-heading: Disabled Checkbox group
         CheckboxGroup<String> group = new CheckboxGroup<>();
         group.setItems("foo", "bar", "baz");
         group.setEnabled(false);
         // end-source-example
 
-        group.setId("button-group-disabled");
+        group.setId("checkbox-group-disabled");
 
-        addCard("Disabled radio button group", group);
+        addCard("Disabled Checkbox group", group);
     }
 
     private void addReadOnlyGroup() {
         // begin-source-example
-        // source-example-heading: Read-only radio button group
+        // source-example-heading: Read-only Checkbox group
         Div valueInfo = new Div();
 
         CheckboxGroup<String> group = new CheckboxGroup<>();
@@ -181,18 +181,18 @@ public class CheckboxDemoView extends DemoView {
                 event -> valueInfo.setText(event.getValue().stream().collect(Collectors.joining(" "))));
         // end-source-example
 
-        group.setId("button-group-read-only");
+        group.setId("checkbox-group-read-only");
         valueInfo.setId("selected-value-info");
         button.setId("switch-read-only");
 
-        addCard("Read-only radio button group", group, button, valueInfo);
+        addCard("Read-only Checkbox group", group, button, valueInfo);
     }
 
     private void addDisabledItems() {
 
         Div valueInfo = new Div();
         // begin-source-example
-        // source-example-heading: Radio button group with item enabled provider
+        // source-example-heading: Checkbox group with item enabled provider
         CheckboxGroup<String> group = new CheckboxGroup<>();
         group.setItems("foo", "bar", "baz");
         group.setItemEnabledProvider(item -> !"bar".equals(item));
@@ -201,10 +201,10 @@ public class CheckboxDemoView extends DemoView {
         group.addValueChangeListener(
                 event -> valueInfo.setText(event.getValue().stream().collect(Collectors.joining(" "))));
 
-        group.setId("button-group-disabled-items");
-        valueInfo.setId("button-group-disabled-items-info");
+        group.setId("checkbox-group-disabled-items");
+        valueInfo.setId("checkbox-group-disabled-items-info");
 
-        addCard("Radio button group with item enabled provider", group, valueInfo);
+        addCard("Checkbox group with item enabled provider", group, valueInfo);
     }
 
     private String getNames(Set<Person> persons) {
@@ -221,7 +221,7 @@ public class CheckboxDemoView extends DemoView {
         group.getElement().getStyle().set("flexDirection", "column");
         // end-source-example
 
-        group.setId("button-group-with-appended-text");
+        group.setId("checkbox-group-with-appended-text");
 
         addCard("Add component to group", group);
     }
@@ -241,7 +241,7 @@ public class CheckboxDemoView extends DemoView {
         group.getElement().getStyle().set("flexDirection", "column");
         // end-source-example
 
-        group.setId("button-group-with-inserted-component");
+        group.setId("checkbox-group-with-inserted-component");
 
         addCard("Insert component after item in group", group);
     }
@@ -260,7 +260,7 @@ public class CheckboxDemoView extends DemoView {
         group.getElement().getStyle().set("flexDirection", "column");
         // end-source-example
 
-        group.setId("button-group-with-prepended-component");
+        group.setId("checkbox-group-with-prepended-component");
 
         addCard("Insert components before item in group", group);
     }
