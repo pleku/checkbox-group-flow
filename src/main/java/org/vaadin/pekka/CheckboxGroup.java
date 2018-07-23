@@ -76,6 +76,7 @@ public class CheckboxGroup<T> extends AbstractCompositeField<FlexLayout, Checkbo
     @Override
     public void setDataProvider(DataProvider<T, ?> dataProvider) {
         this.dataProvider = dataProvider;
+        this.dataProvider.addDataProviderListener(event -> refresh());
         refresh();
     }
 
